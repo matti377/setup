@@ -7,7 +7,7 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 #ask for username and password
-
+read -s -p "Enter your password: " current_username
 read -p "Enter the new username: " new_username
 read -s -p "Enter your password: " password
 echo
@@ -52,3 +52,8 @@ sudo sh -c "echo '$newusername:$password' | chpasswd"
 
 #automate security updates
 sudo dpkg-reconfigure --priority=low unattended-upgrades
+
+#clean
+sudo apt autoremove -y
+sudo apt-get clean -y
+sudo rm -r /home/$current_username/setup
