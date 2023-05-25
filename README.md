@@ -4,7 +4,7 @@ How to execute this script:
 
 clone the directory:
 
-git clone https://github.com/matti377/setup
+git clone https://github.com/matti377/setup.git
 
 enter the directory
 cd setup
